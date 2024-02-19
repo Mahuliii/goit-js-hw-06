@@ -6,16 +6,17 @@ class StringBuilder {
   getValue() {
     return this.#value;
   }
-  padEnd(str) {
-    this.#value = this.#value.padEnd(str.length + this.#value.length, str);
-  }
   padStart(str) {
-    this.#value = this.#value.padStart(str.length + this.#value.length, str);
+    this.#value = str + this.#value;
   }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
   padBoth(str) {
-    this.#value = this.#value
-      .padStart(str.length + this.#value.length, str)
-      .padEnd(str.length * 2 + this.#value.length, str);
+    this.padStart(str);
+    this.padEnd(str);
   }
 }
 
