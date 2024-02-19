@@ -13,8 +13,9 @@ class StringBuilder {
     this.#value = this.#value.padStart(str.length + this.#value.length, str);
   }
   padBoth(str) {
-    this.#value = this.#value.padStart(str.length + this.#value.length, str);
-    this.#value = this.#value.padEnd(str.length + this.#value.length, str);
+    this.#value = this.#value
+      .padStart(str.length + this.#value.length, str)
+      .padEnd(str.length * 2 + this.#value.length, str);
   }
 }
 
